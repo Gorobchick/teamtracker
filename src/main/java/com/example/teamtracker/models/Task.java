@@ -1,10 +1,5 @@
 package com.example.teamtracker.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 @Entity
 public class Task {
 
@@ -27,10 +22,6 @@ public class Task {
         return this.about;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getPerformer() {
         return this.performer;
     }
@@ -46,6 +37,21 @@ public class Task {
     }
 
     public void setPerformer(String performer) {
+        this.performer = performer;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    // constructors--------------------------
+
+    public Task() {
+    }
+
+    public Task(String title, String about, String performer) {
+        this.title = title;
+        this.about = about;
         this.performer = performer;
     }
 
