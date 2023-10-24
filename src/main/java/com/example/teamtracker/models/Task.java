@@ -1,6 +1,13 @@
 package com.example.teamtracker.models;
 
+import org.springframework.data.relational.core.mapping.Table;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 @Entity
+@Table(name = "tasks")
 public class Task {
 
     @Id
