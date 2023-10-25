@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.*;
 
 @Entity
 @Table(name = "tasks")
@@ -15,10 +16,20 @@ public class Task {
     private Long id;
 
     private String title, about, performer;
+    private LocalDate startDate;
+    private LocalDate endDate;
 
     // getters--------------------------------
     public Long getId() {
         return this.id;
+    }
+
+    public LocalDate getStartDate() {
+        return this.startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return this.endDate;
     }
 
     public String getTitle() {
@@ -39,6 +50,14 @@ public class Task {
         this.title = title;
     }
 
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+    }
+
     public void setAbout(String about) {
         this.about = about;
     }
@@ -56,10 +75,12 @@ public class Task {
     public Task() {
     }
 
-    public Task(String title, String about, String performer) {
+    public Task(String title, String about, String performer, LocalDate startDate, LocalDate endDate) {
         this.title = title;
         this.about = about;
         this.performer = performer;
+        this.startDate = startDate;
+        this.endDate = endDate;
     }
 
 }
